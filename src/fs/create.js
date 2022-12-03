@@ -1,15 +1,15 @@
 import { writeFile } from 'node:fs/promises';
 import { join } from 'path';
-import { FS_ERROR, FS_DIR } from './constants.js';
+import { FS_FILES_DIR, ERROR_HANDLER } from './constants.js';
 
 export const create = async () => {
-        const filePath = join(FS_DIR, "/files", "fresh.txt");
+        const fresh_file_path = join(FS_FILES_DIR, "fresh.txt");
         const text = "I am fresh and young";
         
         try {
-            await writeFile(filePath, text, { flag: 'wx' });
+            await writeFile(fresh_file_path, text, { flag: 'wx' });
           } catch (err) {
-            throw new Error(FS_ERROR);
+            ERROR_HANDLER()
           }
 };
 
