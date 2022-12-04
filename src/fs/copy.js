@@ -6,7 +6,7 @@ export const copy = async () => {
     const filesCopyDir = join(FS_DIR, "/files_copy/");
 
     try {
-        await cp(FS_FILES_DIR, filesCopyDir, {recursive: true, force: false, errorOnExist: true});
+        await cp(FS_FILES_DIR, filesCopyDir, { recursive: true, force: false, errorOnExist: true });
     } catch (err) {
         ERROR_HANDLER();
     }
