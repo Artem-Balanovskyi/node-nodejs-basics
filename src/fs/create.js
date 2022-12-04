@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises';
 import { join } from 'path';
 import { FS_FILES_DIR, ERROR_HANDLER } from './constants.js';
 
-export const create = async () => {
+const create = async () => {
   const freshFilePath = join(FS_FILES_DIR, "fresh.txt");
   const text = "I am fresh and young";
 

@@ -2,7 +2,7 @@ import { cp } from 'node:fs/promises';
 import { join } from 'path';
 import { FS_DIR, FS_FILES_DIR, ERROR_HANDLER } from './constants.js';
 
-export const copy = async () => {
+const copy = async () => {
     const filesCopyDir = join(FS_DIR, "/files_copy/");
 
     try {
@@ -12,4 +12,4 @@ export const copy = async () => {
     }
 };
 
-copy();
+await copy();
