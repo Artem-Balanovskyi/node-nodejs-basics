@@ -4,9 +4,9 @@ import { fileURLToPath } from 'url';
 
 const calculateHash = async () => {
     const __dirname = dirname(fileURLToPath(import.meta.url));
-    const fileToCalcHashForDir = join(__dirname, '/files', 'fileToCalculateHashFor.txt');
+    const fileToCalcHashForPath = join(__dirname, '/files', 'fileToCalculateHashFor.txt');
 
-    const hash = createHash('sha256').update(fileToCalcHashForDir).digest('hex');
+    const hash = createHash('sha256').update(fileToCalcHashForPath).digest('hex');
     console.log(`Hash is: ${hash}`);
 };
 

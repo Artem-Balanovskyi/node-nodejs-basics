@@ -3,8 +3,8 @@ import { join } from 'path';
 import { FS_ERROR, FS_DIR, FS_FILES_DIR } from './constants.js';
 
 const rename = async () => {
-    const wrongFileDir = join(FS_DIR, "/files", "wrongFilename.txt");
-    const propFileDir = join(FS_DIR, "/files", "properFilename.md");
+    const wrongFilePath = join(FS_DIR, "/files", "wrongFilename.txt");
+    const propFilePath = join(FS_DIR, "/files", "properFilename.md");
 
     try {
         const allFiles = await readdir(FS_FILES_DIR);
@@ -12,7 +12,7 @@ const rename = async () => {
         if (!allFiles.includes("wrongFilename.txt") || allFiles.includes("properFilename.md")) {
             throw new Error(FS_ERROR);
         } else {
-            await changeFileName(wrongFileDir, propFileDir);
+            await changeFileName(wrongFilePath, propFilePath);
         }
     } catch (err) {
         console.log(`Error: ${err.message}`);
