@@ -1,9 +1,9 @@
-import { createUnzip } from 'zlib';
+import { createGunzip } from 'zlib';
 import { createReadStream, createWriteStream } from 'fs';
 import { __dirname, comressedFilePath, fileToComressPath } from './constants.js';
 
 const decompress = async () => {
-    const decompress = createUnzip();
+    const decompress = createGunzip();
     const source = createReadStream(comressedFilePath);
     const destination = createWriteStream(fileToComressPath);
 
